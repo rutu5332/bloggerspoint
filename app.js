@@ -20,15 +20,6 @@ const { compare } = require("bcryptjs");
 // Initialize express app
 const app = express();
 // Database Connection
-/*mongoose
-   .connect(urls.mongoDB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-     useFindAndModify: true,
-   })
-   .then(() => console.log("MongoDB is successfully connected"))
-  .catch((err) => console.log(err));*/
-
 
   const url = `mongodb+srv://202012077:13@MehaVora@cluster0.wglzq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 

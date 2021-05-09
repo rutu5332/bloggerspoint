@@ -14,9 +14,10 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <body onload="nxt()">
     <!-- Include navbar -->
     <%- include('../components/navbar') %>
    <!--  <form class="form-inline my-2 my-lg-0" action="/Search/search/dsearch" method="get">    
@@ -24,22 +25,42 @@
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
     </form> -->   
     
-    <form action="/Search/search/" method="GET">
+    <!-- <form action="/Search/search/" method="GET">
       <input type="text" name="title" placeholder="Search...">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
-    </form>
-    <section class="blog"><%- include('../components/card') %></section> 
+    </form> -->
 
-    <!-- check -->
-    <!-- <% if(authUser.email=== 'akshar@gmail.com'){ %>
-    <section class="blog"><%- include('../components/AdminCard') %></section>
-    <% } else { %>
-    <section class="blog"><%- include('../components/card') %></section>
-    <% } %> -->
+    <section class="box">
+      <section class="slider" id="slide">
+        
+      </section>
+      <button id="prew" onclick="prew()"> < </button>
+      <button id="nxt" onclick="nxt()"> > </button>
+  
+    </section>
+    <section class="information">
+      <% var i=0; %>
+      <% posts.forEach(post => { %>
+        <% if(i < 4) { %>
+        <div> 
+          <img height="150px" width="250px" src="/static/images/<%= post.image %>" alt="" />
+          <h1><%= post.title %></h1>
+          <h2>Author : <%= post.user.name %></h2>
+          
+          <i class="fa fa-thumbs-o-up"> <%= post.likes %></i>
+          <center><a class="button" href="/posts/blog/single/<%= post.id %>">Readmore</a></center> 
+        </div>
+        <% i++ %>
+          
+      <% } %>
 
-    <!-- <div class="footer">Blog</div> -->
+      <% }); %>
+    </section> 
+
+    <%- include('../components/footer') %>
 
     <!-- CUSTOM JS -->
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/slide.js"></script>
   </body>
 </html>
