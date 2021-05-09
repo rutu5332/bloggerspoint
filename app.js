@@ -38,15 +38,6 @@ mongoose.connect(url,connectionParams)
         console.error(`Error connecting to the database. \n${err}`);
     })
 
-  //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/web-bloggerspoint');
-  /*.connect("mongodb+srv://202012077:13@MehaVora@cluster0.bibxr.mongodb.net/BloggersPoint?retryWrites=true&w=majority", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: true,
-  })
-  .then(() => console.log("MongoDB is successfully connected"))
-  .catch((err) => console.log(err));
-*/
 // Configuration for form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
