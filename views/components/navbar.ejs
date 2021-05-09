@@ -5,7 +5,7 @@
         <a href="/" class="navbar__link">Home</a>
       </li>
       <li class="navbar__item">
-        <a href="/api" class="navbar__link">API</a>
+        <a href="/api/word/?meaning=!" class="navbar__link">API</a>
       </li>
      
       <% if(isAuthenticate) { %>
@@ -16,7 +16,7 @@
         <a href="/posts/myblogs" class="navbar__link">Your Blog</a>
       </li>
       <li class="navbar__item">
-        <a href="/auth/about" class="navbar__link">AboutUs</a>
+        <a href="/auth/about" class="navbar__link">About Us</a>
       </li>
       <li class="navbar__item">
         <a href="/auth/logout" class="navbar__link">Logout</a>
@@ -27,9 +27,12 @@
       </li>
       <li class="navbar__item">
         <a href="/auth/login" class="navbar__link">Login</a>
-      </li>
+      </li> 
       
       <% } %>
+      <li class="navbar__item">
+        <a href="/auth/All_Blogs" class="navbar__link"><i class="fa fa-search"> </i></a>
+      </li> 
     </ul>
   </nav>
 </section>

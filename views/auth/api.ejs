@@ -1,1 +1,29 @@
-<h1>API</h1>
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <%- include('../components/navbar') %>
+    
+    <form action="/api/word/" method="GET">
+        <input type="text" name="meaning" placeholder="Type a word....">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
+      </form>
+      <%=def %>
+        
+</body>
+</html>

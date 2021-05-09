@@ -35,7 +35,8 @@
           </div>
           <div class="blog__info">
             <span style="font-weight: bolder">Author : <%= blog.user.name %></span> &nbsp;&nbsp;&nbsp;&nbsp;
-            <br><i class="fa fa-thumbs-o-up"> <span><%= blog.likes %></span> </i>
+            <br><a href="/likes/like?q=<%= blog.id %>" style="text-decoration: none;color:inherit;"> <i class="fa fa-thumbs-o-up"> </i> </a> 
+            <span><%= blog.likes %></span>
             <br /><span><%= blog.date.toString() %></span>
           </div>
       </section>

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Group17l",
+  "author": "Group17",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

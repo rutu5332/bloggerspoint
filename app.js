@@ -15,6 +15,8 @@ const authRoute = require("./routes/authRoute");
 const postsRoute = require("./routes/postsRoute");
 const SearchRoutes = require("./routes/SearchRoutes");
 const APIRoutes=require("./routes/APIRoutes");
+//const forgotRoute=require("./routes/forgotRoute");
+const likeRoute=require("./routes/LikeRoutes");
 const { compare } = require("bcryptjs");
 // const Admin = require("./routes/AdminRoutes");
 // Initialize express app
@@ -119,4 +121,6 @@ app.use("/auth", authRoute);
 app.use("/posts", postsRoute);
 app.use("/Search", SearchRoutes);
 app.use("/api",APIRoutes);
+//app.use("/forgot",forgotRoute);
+app.use("/likes",likeRoute);
 app.listen(3001, () => console.log("Server is running on port 3001"));
