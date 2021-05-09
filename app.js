@@ -128,4 +128,4 @@ app.use("/auth", authRoute);
 app.use("/posts", postsRoute);
 app.use("/Search", SearchRoutes);
 app.use("/api",APIRoutes);
-app.listen(17118, () => console.log("Server is running on port 17118"));
+app.listen(3001, () => console.log("Server is running on port 3001"));
