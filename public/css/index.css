@@ -5,12 +5,6 @@ body{
 	font-family:calibri;
 	font-size:2vw;
 }
-header{
-	height :15%;
-	background-color: orange;
-	color:white;
-	display:flex;	
-}
 .main{
 	width:30%;
 	height:100%;

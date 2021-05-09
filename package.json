@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "author": "Avijit Mandal",
+  "author": "Group17l",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

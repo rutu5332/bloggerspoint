@@ -25,6 +25,18 @@ router.get("/signup", (req, res) => {
   });
 });
 
+router.get("/about", (req, res) => {
+  let message = req.flash("error");
+  if (message.length > 0) {
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render("auth/aboutus", {
+    errorMessage: message,
+  });
+});
+
 /*
  * @type     POST
  * @route    '/auth/signup'
@@ -127,7 +139,7 @@ router.post("/login", (req, res) => {
 router.get("/logout", (req, res) => {
   if (req.session.isLoggedIn) {
     req.session.destroy();
-    res.redirect("/");
+    res.redirect("/auth/login");
   }
 });
 
