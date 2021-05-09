@@ -41,7 +41,7 @@ router.get("/All_Blogs", (req, res) => {
   let message = req.flash("error");
   Post.find().populate('user')
   .then(posts => {
-      res.render('auth/all_posts', { posts: posts });
+      res.render('posts/all_posts', { posts: posts });
   })
   .catch(err => console.log(err));
 });
