@@ -20,14 +20,32 @@ const { compare } = require("bcryptjs");
 // Initialize express app
 const app = express();
 // Database Connection
-mongoose
+/*mongoose
    .connect(urls.mongoDB, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
      useFindAndModify: true,
    })
    .then(() => console.log("MongoDB is successfully connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err));*/
+
+
+  const url = `mongodb+srv://202012077:13@MehaVora@cluster0.wglzq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
+const connectionParams={
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+}
+mongoose.connect(url,connectionParams)
+    .then( () => {
+        console.log('Connected to database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. \n${err}`);
+    })
+
+  //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/web-bloggerspoint');
   /*.connect("mongodb+srv://202012077:13@MehaVora@cluster0.bibxr.mongodb.net/BloggersPoint?retryWrites=true&w=majority", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
