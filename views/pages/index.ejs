@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('../components/navbar') %>
+   <!--  <form class="form-inline my-2 my-lg-0" action="/Search/search/dsearch" method="get">    
+      <input class="form-control mr-sm-2" type="text" name="dsearch" placeholder="Search">    
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
+    </form> -->   
+    
+    <form action="/Search/search/" method="GET">
+      <input type="text" name="title" placeholder="Search...">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
+    </form>
+    <section class="blog"><%- include('../components/card') %></section> 
+
+    <!-- check -->
+    <!-- <% if(authUser.email=== 'akshar@gmail.com'){ %>
+    <section class="blog"><%- include('../components/AdminCard') %></section>
+    <% } else { %>
+    <section class="blog"><%- include('../components/card') %></section>
+    <% } %> -->
+
+    <!-- <div class="footer">Blog</div> -->
+
+    <!-- CUSTOM JS -->
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

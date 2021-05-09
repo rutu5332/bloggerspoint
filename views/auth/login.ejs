@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('../components/navbar') %>
+
+    <section class="signup">
+      <div class="signup__form">
+        <h2>Login form</h2>
+        <% if(errorMessage) { %>
+        <p class="error"><%= errorMessage %></p>
+        <% } %>
+        <form action="/auth/login" method="POST">
+          <div class="form__group">
+            <label for="">Email</label>
+            <input
+              type="email"
+              class="form__control"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form__group">
+            <label for="">Password</label>
+            <input
+              type="password"
+              class="form__control"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="form__group">
+            <input type="submit" value="Login" class="form__btn" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CUSTOM JS -->
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

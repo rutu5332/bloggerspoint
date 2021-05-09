@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <!-- Include navbar -->
+    <%- include('../components/navbar') %>
+
+    <section class="signup">
+      <div class="signup__form">
+        <h2>Blog</h2>
+        <% if(successMsg) { %>
+        <p class="error"><%= successMsg %></p>
+        <% } %>
+        <form
+          action="/posts/edit/<%= post.id %>"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form__group">
+            <label for="">Title</label>
+            <input
+              type="text"
+              class="form__control"
+              name="title"
+              value="<%= post.title %>"
+            />
+          </div>
+          <div class="form__group">
+            <label for="">Upload Image</label>
+            <span><%= post.image %></span>
+            <input
+              type="file"
+              class="form__control"
+              name="image"
+              value="<%= post.image %>"
+            />
+          </div>
+          <div class="form__group">
+            <label for="">Body</label>
+            <textarea class="form__control" name="blog" rows="7">
+<%= post.body %></textarea
+            >
+          </div>
+          <div class="form__group">
+            <input type="submit" value="Submit" class="form__btn" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CUSTOM JS -->
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

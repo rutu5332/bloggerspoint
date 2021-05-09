@@ -1,0 +1,38 @@
+<div class="container">
+    <% posts.forEach(post => { %>
+    <div class="card">
+      <div class="card__image">
+        <img src="/static/images/<%= post.image %>" alt="" />
+      </div>
+      <div class="card__content">
+        <h2 class="card__heading"><%= post.title %></h2>
+        <p class="card__text">
+          <%= post.body.slice(0, 150) %>...<a
+            href="/posts/blog/single/<%= post.id %>"
+            >Readmore</a
+          >
+        </p>
+        <div class="card__info">
+          <span><%= post.user.name %></span>
+          <span><%= post.date.getDate() + '/' + (post.date.getMonth() + 1) + '/' +
+            post.date.getFullYear() %></span>
+          <div class="card__action">
+            <a href="/AdminRoutes/delete?q=<%= post.id %>" class="action__btn">Delete</a>
+          </div>
+        </div>
+        <!-- <% if(post.user.id === authUser.id) { %>
+        <div class="card__action">
+          <a href="/posts/edit?q=<%= post.id %>" class="action__btn">Update</a>
+          <a href="/posts/delete?q=<%= post.id %>" class="action__btn">Delete</a>
+        </div>
+        <% } %> -->
+          <!-- <div class="card__action">
+            <a href="/AdminRoutes/delete?q=<%= post.id %>" class="action__btn">Delete</a>
+          </div> 
+         -->
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  

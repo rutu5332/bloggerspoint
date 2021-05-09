@@ -1,0 +1,162 @@
+/*     Common style
+-------------------------------------------- */
+:root {
+  --font-primary: "Merriweather", serif;
+  --color-primary: blue;
+  --color-secondary: #8ea6b4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  color: #333333;
+  margin: 0;
+}
+
+.error {
+  color: #fff;
+  background-color: #d45959;
+  padding: 10px;
+}
+
+/* .footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+} */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*     Navbar Section
+-------------------------------------------- */
+.navbar {
+  background-color: var(--color-primary);
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar__link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.navbar__link:hover {
+  background-color: #dadada;
+}
+
+/*     Registration form
+-------------------------------------------- */
+.signup {
+  margin-top: 30px;
+}
+
+.signup__form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form__group {
+  margin-bottom: 16px;
+}
+
+.form__group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form__control {
+  min-height: 52px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.form__btn {
+  border: 0;
+  background-color: #1f52c0;
+  padding: 20px 30px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.form__btn:hover {
+  background-color: #184097;
+}
+
+/*     blog Section
+-------------------------------------------- */
+.blog {
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  border: 2px solid var(--color-primary);
+  padding: 20px;
+  margin: 25px 0;
+}
+
+.card__image {
+  width: 30%;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.card__content {
+  width: 70%;
+  margin-left: 20px;
+}
+
+.card__text {
+  color: black;
+}
+
+.card__info span {
+  margin-right: 15px;
+  color: black;
+}
+
+.blog__img {
+  width: 100%;
+}
+
+.blog__img img {
+  width: 100%;
+}
+
+.card__action {
+  margin-top: 16px;
+}
+
+.action__btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #8648f8;
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+  <% posts.forEach(post => { %>
+  <div class="card">
+    <div class="card__image">
+      <img height="200px" width="200px" src="/static/images/<%= post.image %>" alt="" />
+    </div>
+    <div class="card__content">
+      <h2 class="card__heading"><%= post.title %></h2>
+
+      <p class="card__text">
+        <%= post.body %>...<a
+          href="/posts/blog/single/<%= post.id %>"
+          >Readmore</a
+        >
+      </p>
+
+      <div class="card__info">
+    
+        <span style="font-weight: bold;"><%= post.user.name %></span>
+        <span
+          ><%= post.date.getDate() + '/' + (post.date.getMonth() + 1) + '/' +
+          post.date.getFullYear() %></span
+        >
+        <a href="/posts/like?q=<%= post.id %>" class="action__btn"><i class="fa fa-heart-o"></i></a><%= post.likes %>
+      </div>
+      <% if(post.user.id === authUser.id) { %>
+      <div class="card__action">
+        <a href="/posts/edit?q=<%= post.id %>" class="action__btn">Update</a>
+        <a href="/posts/delete?q=<%= post.id %>" class="action__btn">Delete</a>
+      </div>
+      <% } %>
+
+      <!-- <% if(authUser.email=== 'akshar@gmail.com' ) { %>
+        <div class="card__action">
+          <a href="/posts/edit?q=<%= post.id %>" class="action__btn">Update</a>
+          <a href="/AdminRoutes/delete?q=<%= post.id %>" class="action__btn">Delete</a>
+        </div>
+        <% }  %> -->
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>

@@ -1,0 +1,32 @@
+<section class="navbar">
+  <nav class="navbar__menu container">
+    <ul class="navbar__list">
+      <li class="navbar__item">
+        <a href="/" class="navbar__link">Home</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/api" class="navbar__link">API</a>
+      </li>
+     
+      <% if(isAuthenticate) { %>
+      <li class="navbar__item">
+        <a href="/posts" class="navbar__link">Write a post</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/posts/myblogs" class="navbar__link">Your Blog</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/auth/logout" class="navbar__link">Logout</a>
+      </li>
+      <% } else { %>
+      <li class="navbar__item">
+        <a href="/auth/signup" class="navbar__link">Registration</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/auth/login" class="navbar__link">Login</a>
+      </li>
+      
+      <% } %>
+    </ul>
+  </nav>
+</section>
