@@ -19,11 +19,13 @@
 <body>
     <%- include('../components/navbar') %>
 
-    <form action="/Search/search/" method="GET">
-        <input type="text" name="title" placeholder="Search...">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
-   </form>
-
+    <center>
+      <form action="/Search/search/" method="GET">
+          <input type="text" name="title" placeholder="Search...">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
+    </form>
+   </center>
+   <br>
     <section class="information">
         <% var i=0 %>
         <% posts.forEach(post => { %>

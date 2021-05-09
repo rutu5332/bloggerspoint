@@ -157,7 +157,7 @@ header nav{
 }
 
 footer{
-	height :20%;
+	height :25%;
 	background-color: teal;
 	color:white;
 	display:flex;	
@@ -177,8 +177,7 @@ footer .details{
 	width:20%;
 	font-size:0.75em;
 	text-align:right;
-	padding:0 3%;
 }
 footer .details label{
-	font-size:.6em;
+	font-size:0.6em;
 }
