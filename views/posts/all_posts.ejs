@@ -18,14 +18,12 @@
 </head>
 <body>
     <%- include('../components/navbar') %>
+
     
-    <form action="/api/word/" method="GET">
-        <input type="text" name="meaning" placeholder="Type a word....">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
-      </form>
-      <%=def %>
-      <br><br><br><Br><br><br><Br> <br><br>
-      <%- include('../components/footer') %>
-        
-</body>
+
+    <%- include('../components/footer') %>
+
+    <!-- CUSTOM JS -->
+    <script src="/static/js/main.js"></script>
+  </body>
 </html>

@@ -14,42 +14,28 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="/static/css/style.css" />
-    <link rel="stylesheet" href="/static/css/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <!-- Include navbar -->
-    <%- include('../components/navbar') %>
+    
 
     <section class="signup">
       <div class="signup__form">
-        <h2>Login form</h2>
-        <% if(errorMessage) { %>
-        <p class="error"><%= errorMessage %></p>
-        <% } %>
-        <form action="/auth/login" method="POST">
+        <h2>Enter Your Email</h2>
+        <form action="/forgot/newPsswd/" method="GET">
           <div class="form__group">
             <label for="">Email</label>
             <input
               type="email"
               class="form__control"
-              name="email"
+              name="forgotemail"
               placeholder="Email"
             />
           </div>
           <div class="form__group">
-            <label for="">Password</label>
-            <input
-              type="password"
-              class="form__control"
-              name="password"
-              placeholder="Password"
-            />
+            <input type="submit" value="Submit" class="form__btn" />
           </div>
-          Forgot password ? <a href="/forgot" > click here</a>
-          <div class="form__group">
-            <input type="submit" value="Login" class="form__btn" />
-          </div>
+         
         </form>
       </div>
     </section>
