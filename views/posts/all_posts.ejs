@@ -26,22 +26,17 @@
     </form>
    </center>
    <br>
-    <section class="information">
-        <% var i=0 %>
+    <section class="allBlogs">
         <% posts.forEach(post => { %>
-            <% if(i == 4) { %>
-                <br><br><br><br><br><br><br><br><br><br><br><br><hr>
-                <% i=0 %>
-            <%  }%> 
+           
           <div> 
-            <img height="150px" width="250px" src="/static/images/<%= post.image %>" alt="" />
+            <section><img height="100%" width="100%" src="/static/images/<%= post.image %>" alt="" /> </section>
             <h1><%= post.title %></h1>
             <h2>Author : <%= post.user.name %></h2>
             
             <i class="fa fa-thumbs-o-up"> <%= post.likes %></i>
             <center><a class="button" href="/posts/blog/single/<%= post.id %>">Readmore</a></center> 
           </div>
-          <% i++ %>
         <% }); %>
       </section> 
 
