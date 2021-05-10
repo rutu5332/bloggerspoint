@@ -1,4 +1,5 @@
 const express = require("express");
+const nodemailer=require("nodemailer");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
@@ -50,7 +51,7 @@ router.get("/All_Blogs", (req, res) => {
  * @type     POST
  * @route    '/auth/signup'
  * @desc     This route is used for register new users
- * @access   PARIVATE
+ * @access   PRIVATE
  */
 router.post("/signup", (req, res) => {
   const newUser = {
@@ -80,6 +81,38 @@ router.post("/signup", (req, res) => {
               email: result.email,
               name: result.name,
             };
+            var transporter = nodemailer.createTransport({
+              host :"smtp.gmail.com",
+              port : 587,
+              secure : false,
+              requireTLS : true,
+              auth:
+              {
+              user: "bloggerspoint10@gmail.com",
+              pass: "WebProg1105"
+              }
+              });
+              
+              
+            var mailOptions = {
+
+              from : "bloggerspoint10@gmail.com",
+              to : result.email,
+              subject :"Welcome to BloggersPoint",
+              text : "We are happy that you become a part of BloggersPoint family. We hope you find it interesting. Regards,BloggersPoint Team"
+              }
+              
+              transporter.sendMail(mailOptions,function(err,info){
+              if(err)
+              {
+                console.log("errror occured",err);
+              }
+              else
+              {
+                console.log("snet",info.response);
+              }
+              });
+              
             res.redirect("/");
           })
           .catch((err) => console.log(err));
