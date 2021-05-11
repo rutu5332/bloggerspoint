@@ -34,7 +34,7 @@
       <% posts.forEach(post => { %>
         <% if(i < 4) { %>
         <div> 
-          <section><img height="100%" width="100%" src="/static/images/<%= post.image %>" alt="" /></section>
+          <section> <img height="100%" width="100%" src="/static/images/<%= post.image %>" alt="" > </section>
           <h1><%= post.title %></h1>
           <h2>Author : <%= post.user.name %></h2>
           
