@@ -7,7 +7,7 @@ router.get("/search/", function (req, res) {
   var regex = new RegExp(req.query.title, "i");
   Post.find({ title: regex }).then((result) => {
       if(result)
-      res.render("posts/all_posts", { posts: result });
+        res.render("posts/all_posts", { posts: result });
      
      
     // res.status(200).json(result);

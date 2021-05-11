@@ -8,24 +8,6 @@ const User = require("../models/User");
 
 const isAuth = require("../utility/isAuth");
 
-/*
- * @type     GET
- * @route    '/auth/signup'
- * @desc     This route is used for load regitration page
- * @access   PUBLIC
- */
-router.get("/signup", (req, res) => {
-  let message = req.flash("error");
-  if (message.length > 0) {
-    message = message[0];
-  } else {
-    message = null;
-  }
-  res.render("auth/registration", {
-    errorMessage: message,
-  });
-});
-
 router.get("/about", (req, res) => {
   let message = req.flash("error");
   if (message.length > 0) {
@@ -46,6 +28,25 @@ router.get("/All_Blogs", (req, res) => {
   })
   .catch(err => console.log(err));
 });
+
+/*
+ * @type     GET
+ * @route    '/auth/signup'
+ * @desc     This route is used for load regitration page
+ * @access   PUBLIC
+ */
+router.get("/signup", (req, res) => {
+  let message = req.flash("error");
+  if (message.length > 0) {
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render("auth/registration", {
+    errorMessage: message,
+  });
+});
+
 
 /*
  * @type     POST

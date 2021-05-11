@@ -23,8 +23,7 @@ router.get("/newPsswd/",(req,res)=>{
     User.findOne({ email: mail })
     .then((user) => {
       if (user) {
-        //req.flash("error", "This email is already exist");
-        //return res.redirect("/auth/signup");
+        
         console.log("inside");
           const otp = otpGenerator.generate(6, { upperCase: false, specialChars: false, 
             alphabets: false });
@@ -37,8 +36,8 @@ router.get("/newPsswd/",(req,res)=>{
           requireTLS : true,
           auth:
           {
-          user: "bloggerspoint10@gmail.com",
-          pass: "WebProg1105"
+            user: "bloggerspoint10@gmail.com",
+            pass: "WebProg1105"
           }
           });
           

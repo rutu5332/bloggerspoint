@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap"
       rel="stylesheet"
     />
-
+   
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="stylesheet" href="/static/css/index.css" />
@@ -20,13 +20,24 @@
     <%- include('../components/navbar') %>
     <center>
     <form action="/api/word/" method="GET">
-        <input type="text" name="meaning" placeholder="Type a word...." class="form__control" style="width:50%;"><br>
+        <input type="text" id="sb" name="meaning" placeholder="Type a word...." class="form__control" style="width:50%;" ondrop="drop(event)" ondragover="allowDrop(event)" ><br>
         <button class="btn btn-secondary my-2 my-sm-0 form__btn" type="submit" >Search</button>    
-    </form>
-    </center>
-      <%=def %>
-      <br><br><br><Br><br><br><Br> <br><br>
+    </form> 
+    
+    </center><br>
+    <label>Try searching this keywords (drag/drop) : </label><p draggable="true" ondragstart="drag(event)" id="p1" class="keywords">good</p>
+    <p draggable="true" ondragstart="drag(event)" id="p2" class="keywords">Comic</p>
+    <p draggable="true" ondragstart="drag(event)" id="p3" class="keywords">Cryptography</p>
+    <p draggable="true" ondragstart="drag(event)" id="p4" class="keywords">Encryption</p>
+    <p draggable="true" ondragstart="drag(event)" id="p5" class="keywords">polity</p>
+    <p draggable="true" ondragstart="drag(event)" id="p6" class="keywords">Enormity</p>
+    <p draggable="true" ondragstart="drag(event)" id="p7" class="keywords">Ironic</p>
+
+    <br><br>
+    <label><b>Answer :</b></label> <%=def %>
+      <br><br><br><Br>
       <%- include('../components/footer') %>
         
 </body>
+<script src="/static/js/dragDrop.js"></script>
 </html>

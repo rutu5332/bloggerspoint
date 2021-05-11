@@ -2,8 +2,7 @@ var image=["i2" , "i6" , "i3" , "i11" ];
 i=image.length;
 function nxt()
 {
-	if (i<image.length)
-	{
+	if (i<image.length){ 	
 		i=i+1;
 	}
 	else

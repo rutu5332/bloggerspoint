@@ -259,3 +259,15 @@ footer .details{
 footer .details label{
 	font-size:0.6em;
 }
+
+.keywords
+{
+	display: inline;
+	background-color: green;
+	font-size: 20px;
+	margin-left: 10px;
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
